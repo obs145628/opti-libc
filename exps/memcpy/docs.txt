@@ -1,0 +1,21 @@
+
+
+# Tracking:
+
+my_memcpy(g_arr2, g_arr1, NBYTES)
+rdi = g_arr2 = 0x7ffe1a33f010
+rsi = g_arr1 = 0x7fff089f2010
+rdx = NBYTES = 0xee6b2800
+
+special implem depending on nbytes
+check if rsi > rdi (to copy one way or another depending in case of overlap)
+
+First load first 1024 non-aligned bytes
+
+align memory correctly (on ????)
+prefect before (???)
+use 256b regs copy 4 at a time in a loop (1024bytes / iter)
+Stop when all aligned bytes are copied
+What is sfence ???
+Then copy 1024 non-aligned bytes
+What is veroupper ???
