@@ -4,6 +4,7 @@
 #include <cstdlib>
 #include <cstring>
 
+// Size multiple of 2048
 static constexpr std::size_t NBYTES = 500000000 * sizeof(std::uint64_t);
 
 extern "C" {
