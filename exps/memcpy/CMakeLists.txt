@@ -13,8 +13,9 @@ set(TEST_SRC
   tests.cc
   implem_libc.c
 )
-add_executable(utest_memcpy_libc ${TEST_SRC})
-target_link_libraries(utest_memcpy_libc catch_main)
+add_executable(utest_memcpy_libc.bin ${TEST_SRC})
+target_link_libraries(utest_memcpy_libc.bin catch_main)
+add_dependencies(build-tests utest_memcpy_libc.bin)
 
 set(V0_0_SRC
   ${MAIN_SRC}
