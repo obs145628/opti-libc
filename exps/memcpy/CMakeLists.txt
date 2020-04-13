@@ -2,11 +2,19 @@ set(MAIN_SRC
   main.cc
 )
 
+
 set(LIBC_SRC
   ${MAIN_SRC}
   implem_libc.c
 )
 add_executable(exp_memcpy_libc ${LIBC_SRC})
+
+set(TEST_SRC
+  tests.cc
+  implem_libc.c
+)
+add_executable(utest_memcpy_libc ${TEST_SRC})
+target_link_libraries(utest_memcpy_libc catch_main)
 
 set(V0_0_SRC
   ${MAIN_SRC}
